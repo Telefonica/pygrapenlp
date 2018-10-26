@@ -12,7 +12,7 @@ from setuptools import setup, find_packages, Extension
 
 MIN_PYTHON_VERSION = (3, 5)
 
-PKGNAME = 'pygrapenlp'
+PKGNAME = 'pygrape'
 GITHUB_URL = 'https://github.com/GrapeNLP/pygrapenlp.git'
 DESC = '''
 Python package enabling the usage of grape-core from Python; for more information about GrapeNLP please visit
@@ -85,7 +85,7 @@ CFLAGS = {
 
 LFLAGS = {
     'linux': ['-L/usr/lib'],
-    'darwin': ['-L/usr/lib']
+    'darwin': ['-L/usr/local/lib']
 }
 
 LIBRARIES = {

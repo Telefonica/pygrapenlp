@@ -2,7 +2,7 @@ import os
 
 import pytest
 
-from pygrapenlp.compressed_delaf import CompressedDelaf
+from pygrape.compressed_delaf import CompressedDelaf
 
 
 @pytest.fixture
