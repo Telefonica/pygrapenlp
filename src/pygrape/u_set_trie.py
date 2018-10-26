@@ -1,5 +1,5 @@
-from pygrapenlp.pygrape import u_array, ust_set_deref
-from pygrapenlp.u_array import u_array_to_string
+from pygrape import u_array_to_string
+from pygrape.pygrape import ust_set_deref, u_array
 
 
 def u_set_trie_string_to_string(native_u_set_trie_string):
