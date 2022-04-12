@@ -21,7 +21,7 @@ https://github.com/GrapeNLP/grape-core
 
 INCLUDES = {
     'linux': [],
-    'darwin': []
+    'darwin': ['/usr/local/include']
 }
 
 CFLAGS = {
