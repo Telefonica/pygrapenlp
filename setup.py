@@ -10,7 +10,7 @@ import sys
 
 from setuptools import setup, find_packages, Extension
 
-MIN_PYTHON_VERSION = (3, 5)
+MIN_PYTHON_VERSION = (3, 7)
 
 PKGNAME = 'pygrape'
 GITHUB_URL = 'https://github.com/GrapeNLP/pygrapenlp.git'
