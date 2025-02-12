@@ -5,26 +5,38 @@
 # the SWIG interface file instead.
 
 
-
-
-
 from sys import version_info
+
 if version_info >= (2, 6, 0):
     def swig_import_helper():
         from os.path import dirname
-        import imp
-        fp = None
-        try:
-            fp, pathname, description = imp.find_module('_pygrape', [dirname(__file__)])
-        except ImportError:
-            import _pygrape
-            return _pygrape
-        if fp is not None:
+
+        if version_info >= (3, 12, 0):
+            import importlib
+            spec = importlib.machinery.PathFinder().find_spec('_pygrape', [dirname(__file__)])
+            if spec is not None:
+                _mod = importlib.util.module_from_spec(spec)
+            else:
+                import _pygrape
+                return _pygrape
+        else:
+            import imp
+            fp = None
+
             try:
-                _mod = imp.load_module('_pygrape', fp, pathname, description)
-            finally:
-                fp.close()
-            return _mod
+                fp, pathname, description = imp.find_module('_pygrape', [dirname(__file__)])
+            except ImportError:
+                import _pygrape
+                return _pygrape
+
+            if fp is not None:
+                try:
+                    _mod = imp.load_module('_pygrape', fp, pathname, description)
+                finally:
+                    fp.close()
+
+        return _mod
+
     _pygrape = swig_import_helper()
     del swig_import_helper
 else:
